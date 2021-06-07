@@ -1,39 +1,39 @@
-class MetExhibits::CLI
+class WhitneyExhibitions::CLI
   
   
   
   def call
-    puts "\nWelcome to the Metropolitan Museum of Art's current exhibitions!\n"
-    get_exhibits
-    list_exhibits
-    get_user_exhibit
+    puts "\nWelcome to the Whitney Museum of American Art's current exhibitions!"
+    get_exhibitions
+    list_exhibitions
+    get_user_exhibition
   end
   
   
   
-  def get_exhibits
+  def get_exhibitions
     #scrape
-    @exhibits = MetExhibits::Exhibits.all
+    @exhibitions = WhitneyExhibitions::Exhibitions.all
   end
   
   
   
-  def list_exhibits
-    puts "\nPlease select the number of the exhibition that you would like to visit:\n"
-    @exhibits.map.with_index(1) do |exhibit, i|
-      puts "#{i}. #{exhibit.name}"
+  def list_exhibitions
+    puts "\nPlease select the number of the exhibition that you would like to visit:"
+    @exhibitions.map.with_index(1) do |exhibition, i|
+      puts "#{i}. #{exhibition.name}"
     end
   end
   
   
   
-  def get_user_exhibit
-    selected_exhibit = gets.strip.to_i
+  def get_user_exhibition
+    selected_exhibition = gets.strip.to_i
     
     #refactor to one line when code passes
     
-    if valid_input(selected_exhibit, @exhibits)
-      display_info_for(selected_exhibit) 
+    if valid_input(selected_exhibition, @exhibitions)
+      display_info_for(selected_exhibition) 
     else puts "Please select a number corresponding to a current exhibition."
       #loop back to select input
     end
@@ -48,10 +48,10 @@ class MetExhibits::CLI
   
   
   
-  def display_info_for(selected_exhibit)
+  def display_info_for(selected_exhibition)
       #scrape for corresponding data
-      exhibit = @exhibits[selected_exhibit - 1]
-      puts "Details for #{exhibit.name}:"
+      exhibition = @exhibitions[selected_exhibition - 1]
+      puts "Details for #{exhibition.name}:"
       #display as list on separate lines
       #{:end_date => "#{end_date}", :location => "#{location}"}
   end
