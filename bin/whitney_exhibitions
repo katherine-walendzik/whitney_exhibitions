@@ -1,2 +1,5 @@
 #!/usr/bin/env ruby
 
+require_relative './lib/whitney_exhibitions'
+
+WhitneyExhibitions::CLI.new.call
