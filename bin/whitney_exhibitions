@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
+puts "hello"
+#require_relative './lib/whitney_exhibitions'
 
-require_relative './lib/whitney_exhibitions'
-
-WhitneyExhibitions::CLI.new.call
+#WhitneyExhibitions::CLI.new.call
