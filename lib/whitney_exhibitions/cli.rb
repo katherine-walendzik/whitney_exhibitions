@@ -4,9 +4,9 @@ class WhitneyExhibitions::CLI
   
   def call
     puts "\nWelcome to the Whitney Museum of American Art's current exhibitions!"
-    get_exhibitions
-    list_exhibitions
-    get_user_exhibition
+    #get_exhibitions
+    #list_exhibitions
+    #get_user_exhibition
   end
   
   
