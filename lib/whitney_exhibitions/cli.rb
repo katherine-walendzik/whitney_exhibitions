@@ -4,10 +4,9 @@ class WhitneyExhibitions::CLI
   
   def call
     puts "\nWelcome to the Whitney Museum of American Art's current exhibitions!"
-    binding.pry
-    #get_exhibitions
-    #list_exhibitions
-    #get_user_exhibition
+    get_exhibitions
+    list_exhibitions
+    get_user_exhibition
   end
   
   
@@ -36,7 +35,7 @@ class WhitneyExhibitions::CLI
     if valid_input(selected_exhibition, @exhibitions)
       display_info_for(selected_exhibition) 
     else puts "Please select a number corresponding to a current exhibition."
-      #loop back to select input
+      get_user_exhibition
     end
     
   end
