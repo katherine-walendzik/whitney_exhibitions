@@ -18,7 +18,6 @@ class WhitneyExhibitions::Dates
   end
   
   def self.all
-    #WhitneyExhibitions::Scraper.scrape_dates if @@all.empty?
     @@all
   end
   
