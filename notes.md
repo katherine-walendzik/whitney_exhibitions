@@ -16,3 +16,6 @@ SESSION 2:
 SESSION 3:
 - Scrape Whitney website
 - Create relationships between classes
+
+TO DO:
+- Remove first two elements of 2nd set of exhibitions (convert to array and use .delete_at ?)
