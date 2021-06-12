@@ -52,8 +52,10 @@ class WhitneyExhibitions::CLI
       #scrape for corresponding data
       exhibition = @exhibitions[selected_exhibition - 1]
       puts "Details for #{exhibition.name}:"
-      #display as list on separate lines
-      #{:end_date => "#{end_date}", :location => "#{location}"}
+      
+      #WhitneyExhibitions::Exhibitions.all.map.with_index(1) do |exhibition|
+      #  puts exhibition dates
+      #end
   end
   
   
