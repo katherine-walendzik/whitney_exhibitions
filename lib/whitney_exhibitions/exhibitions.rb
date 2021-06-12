@@ -19,7 +19,7 @@ class WhitneyExhibitions::Exhibitions
     @@all
   end
   
-  def dates
+  def self.dates
     WhitneyExhibitions::Scraper.scrape_dates if @dates.empty?
     @dates
   end
