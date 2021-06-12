@@ -19,7 +19,7 @@ class WhitneyExhibitions::CLI
   def list_exhibitions
     puts "\nPlease select the number of the exhibition that you would like to visit:"
     @exhibitions.map.with_index(1) do |exhibition, i|
-      puts "#{i}. #{exhibition.name}\n"
+      puts "#{i}. #{exhibition.name}"
     end
   end
   
