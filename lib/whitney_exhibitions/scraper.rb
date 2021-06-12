@@ -24,7 +24,7 @@ class WhitneyExhibitions::Scraper
     
     dates.each do |d|
       dates = d.text.strip
-      WhitneyExhibitions::Exhibitions.new(dates)
+      WhitneyExhibitions::Dates.new(dates, exhibition)
     end
     
   end

@@ -1,7 +1,5 @@
 class WhitneyExhibitions::Exhibitions
   attr_accessor :name, :dates
-  #attr_writer :dates
-  
   @@all = []
   
   def initialize(name)
@@ -21,7 +19,6 @@ class WhitneyExhibitions::Exhibitions
   
   def get_dates
     WhitneyExhibitions::Scraper.scrape_dates(self) if @dates.empty?
-    #@dates
   end
   
 end

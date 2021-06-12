@@ -1,10 +1,11 @@
 class WhitneyExhibitions::Dates
-  attr_accessor :range, :exhibition
+  attr_accessor :dates, :exhibition
   @@all = []
   
-  def initialize(range,exhibition)
-    @range = range
+  def initialize(dates,exhibition)
+    @dates = dates
     @exhibition = exhibition
+    add_to_exhibition
     save
   end
   
@@ -17,7 +18,7 @@ class WhitneyExhibitions::Dates
   end
   
   def self.all
-    WhitneyExhibitions::Scraper.scrape_dates if @@all.empty?
+    #WhitneyExhibitions::Scraper.scrape_dates if @@all.empty?
     @@all
   end
   
