@@ -1,7 +1,5 @@
 class WhitneyExhibitions::CLI
   
-  
-  
   def call
     puts "\nWelcome to the Whitney Museum of American Art's current exhibitions!"
     get_exhibitions
@@ -9,14 +7,9 @@ class WhitneyExhibitions::CLI
     get_user_exhibition
   end
   
-  
-  
   def get_exhibitions
-    #scrape
     @exhibitions = WhitneyExhibitions::Exhibitions.all
   end
-  
-  
   
   def list_exhibitions
     puts "\nPlease select the number of the exhibition that you would like to visit:"
@@ -25,12 +18,8 @@ class WhitneyExhibitions::CLI
     end
   end
   
-  
-  
   def get_user_exhibition
     selected_exhibition = gets.strip.to_i
-    
-    #refactor to one line when code passes
     
     if valid_input(selected_exhibition, @exhibitions)
       display_info_for(selected_exhibition) 
@@ -39,8 +28,6 @@ class WhitneyExhibitions::CLI
     end
     
   end
-  
-
   
   def valid_input(input, data)
     input.to_i <= data.length && input.to_i > 0
