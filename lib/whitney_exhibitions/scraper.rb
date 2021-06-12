@@ -12,9 +12,10 @@ class WhitneyExhibitions::Scraper
     list_two_edit = edit.drop(2)
 
     master_list = list_one.text + list_two_edit.join
-    exhibitions = master_list.split(/\n+|\r+/).reject(&:empty?)
+    exhibitions = master_list.split("\n")
+    #need to remove empty elements in array
     
-    exhibitions.each do |e|
+    exhibitions.compact.each do |e|
       name = e.strip
       WhitneyExhibitions::Exhibitions.new(name)
     end
