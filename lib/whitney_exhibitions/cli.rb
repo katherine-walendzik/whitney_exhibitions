@@ -21,7 +21,7 @@ class WhitneyExhibitions::CLI
   def list_exhibitions
     puts "\nPlease select the number of the exhibition that you would like to visit:"
     @exhibitions.map.with_index(1) do |exhibition, i|
-      puts "#{i}. #{exhibition.name}"
+      puts "#{i}. #{exhibition.name}\n"
     end
   end
   
@@ -34,7 +34,7 @@ class WhitneyExhibitions::CLI
     
     if valid_input(selected_exhibition, @exhibitions)
       display_info_for(selected_exhibition) 
-    else puts "Please select a number corresponding to a current exhibition."
+    else puts "\nPlease select a number corresponding to a current exhibition."
       get_user_exhibition
     end
     
@@ -51,7 +51,7 @@ class WhitneyExhibitions::CLI
   def display_info_for(selected_exhibition)
       #scrape for corresponding data
       exhibition = @exhibitions[selected_exhibition - 1]
-      puts "Details for #{exhibition.name}:"
+      puts "\nDetails for #{exhibition.name}:"
       
       #WhitneyExhibitions::Exhibitions.all.map.with_index(1) do |exhibition|
       #  puts exhibition dates
