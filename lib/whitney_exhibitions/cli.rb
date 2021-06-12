@@ -2,9 +2,14 @@ class WhitneyExhibitions::CLI
   
   def call
     puts "\nWelcome to the Whitney Museum of American Art's current exhibitions!"
-    get_exhibitions
-    list_exhibitions
-    get_user_exhibition
+    @input = ""
+    until @input == "exit"
+      get_exhibitions
+      list_exhibitions
+      get_user_exhibition
+      what_next
+    end
+    goodbye
   end
   
   def get_exhibitions
@@ -33,8 +38,6 @@ class WhitneyExhibitions::CLI
     input.to_i <= data.length && input.to_i > 0
   end
   
-  
-  
   def display_info_for(selected_exhibition)
       exhibition = @exhibitions[selected_exhibition - 1]
       exhibition.get_dates
@@ -43,8 +46,16 @@ class WhitneyExhibitions::CLI
       exhibition.dates.each do |exhibition|
         puts exhibition.dates
       end
+
   end
   
+  def what_next
+    puts "\nAre you interested in another exhibition? Type 'exit' to exit or press any key to return to the exhibition list."
+    @input = gets.strip
+  end
   
+  def goodbye
+    puts "\nEnjoy the Whitney!"
+  end
   
 end
