@@ -37,12 +37,12 @@ class WhitneyExhibitions::CLI
   
   def display_info_for(selected_exhibition)
       exhibition = @exhibitions[selected_exhibition - 1]
-      dates = exhibition.dates
+      exhibition.get_dates
       puts "\nDates for #{exhibition.name}:"
       
-      #WhitneyExhibitions::Exhibitions.all.map.with_index(1) do |exhibition|
-      #  puts exhibition dates
-      #end
+      exhibition.dates.each do |exhibition|
+        puts exhibition.dates
+      end
   end
   
   

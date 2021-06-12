@@ -14,7 +14,7 @@ class WhitneyExhibitions::Scraper
     
   end
   
-  def self.scrape_dates#(exhibition)
+  def self.scrape_dates(exhibition)
     
     uri = "https://whitney.org/exhibitions"
     doc = Nokogiri::HTML(URI.open(uri))
