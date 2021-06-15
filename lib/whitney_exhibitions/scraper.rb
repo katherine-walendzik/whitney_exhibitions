@@ -14,7 +14,15 @@ class WhitneyExhibitions::Scraper
     list_two_edit = edit.drop(2)
 
     master_list = list_one.text + list_two_edit.join
+    binding.pry
+    #master_list.split(/\n+/).delete_if{|el| el == "                " }
+    #master_list.split(/\n+/).delete_if{|el| el == "                " }.map {|el|el.gsub(/\s+/,"")}
     exhibitions = master_list.split(/\n+/)
+    
+    #works
+    #master_list.split(/\n+/).delete_if{|el| el == "                " }.map {|el|el.strip}
+    #remove first element
+    #.squish method (for array)
     #need to remove empty elements in array
     
     exhibitions.each do |e|
